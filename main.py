@@ -30,6 +30,9 @@ def main():
     while True:
         print u"请输入餐厅评论语句："
         sentence = raw_input()
+        if not sentence:
+            print u"请输入有效评论！\n"
+            continue
         result = svm_obj.classify(sentence)
         if result == 1:
             print u"恭喜您！这是一条积极评论！"
